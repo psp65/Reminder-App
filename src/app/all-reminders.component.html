@@ -1,0 +1,19 @@
+<div>
+    <h2> Add Task </h2>
+    <label>Task: </label> <input #taskName />
+    <label>Desc: </label> <input #desc />
+    <button (click)="add(taskName.value, desc.value); taskName.value=''; desc.value='' ">
+      Add
+    </button>
+</div>
+<hr />  
+<h2>My Tasks</h2>
+<ul class="reminders">
+  <li *ngFor="let rem of reminders" [class.selected]="rem === selectedRem" (click)="onSelect(rem)">
+    <span class="badge">{{rem.id}}</span> 
+    <span> {{rem.task}} </span>
+    <button class="delete"
+    (click)="delete(rem); $event.stopPropagation()">x</button>
+  </li>
+</ul>
+<hr />

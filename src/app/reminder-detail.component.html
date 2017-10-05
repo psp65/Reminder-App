@@ -1,0 +1,16 @@
+<div *ngIf="reminder">
+    <h2>Selected task details:</h2>
+    <!-- <div><label>Id: </label>{{reminder.id}}</div> -->
+    <div>
+    <label>Task: </label>
+    <input [(ngModel)]="reminder.task" placeholder="Task"/>
+    <br>
+    <label>Desc: </label>
+    <input [(ngModel)]="reminder.desc" placeholder="Description" />
+    </div>
+    <button (click)="save(reminder)">Save</button>
+
+    <button (click)="goBack()">Back</button>
+    <button (click)="close()">Close</button>
+    <hr />
+</div> 
